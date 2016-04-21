@@ -1,5 +1,5 @@
 var Sequelize = require('sequelize');
-var password = require('../config/mysqlsetup.js');
+var password = require('../config/mysqlsetup.example.js');
 
 // Using ES2015:
 // import password from '../config/mysqlsetup.js';

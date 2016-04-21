@@ -1,4 +1,4 @@
 module.exports = {
-  CLIENT_ID: 'YOUR_CLIENT_ID',
-  CLIENT_SECRET: 'YOUR_CLIENT_SECRET'
+  CLIENT_ID: '415846930339-se5ol3urcfhepkcffckd6qieraghc9co.apps.googleusercontent.com',
+  CLIENT_SECRET: 'H_Hfudc9PumMxsY_tWqgiWsF'
 };

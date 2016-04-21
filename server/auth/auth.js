@@ -1,4 +1,4 @@
-var googleKeys = require(__dirname + '/../config/googleplus');
+var googleKeys = require(__dirname + '/../config/googleplus.example.js');
 var passport = require('passport');
 var GoogleStrategy = require('passport-google-oauth');
 var User = require(__dirname + '/../users/userModel');

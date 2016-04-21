@@ -8,6 +8,9 @@ import $ from 'jquery';
 class PlaceContainer extends Component {
   constructor(props) {
     super(props);
+    // this.state = {
+    //   currentPlace: templateClickHandler
+    // }
   }
 
   render() {
@@ -17,13 +20,29 @@ class PlaceContainer extends Component {
         <div id='loading-container' className='col-6-12'>
           { this.props.places.map((place) => (
             <div>
-              <PlaceEntry onSaveClick={this.props.onSaveClick} place={ place }></PlaceEntry>
+              <PlaceEntry tempClickHandler={this.props.templateClickHandler} onSaveClick={this.props.onSaveClick} place={ place } >
+              </PlaceEntry>
             </div>
           ))}
         </div>
       </div>
     );
   }
+}
+
+const mapTempToProps = (state) => {
+  return {
+    templateClickHandler: (e) => {
+      console.log(e);
+      e.preventDefault;
+      console.log('imclicking on it');
+      return {
+        place: state.place
+      }
+    }
+  }
+
+  // return this.setState(e.)
 }
 
 const mapStateToProps = (state) => {
@@ -45,12 +64,15 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
+// props validations
 PlaceContainer.propTypes = {
   places: PropTypes.array.isRequired,
   onSaveClick: PropTypes.func.isRequired
+  // mapTempToProps: PropTypes.func.isRequired
 };
 
 export default connect(
   mapStateToProps,
+  // mapTempToProps,
   mapDispatchToProps
 )(PlaceContainer);

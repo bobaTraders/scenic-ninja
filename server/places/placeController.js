@@ -1,7 +1,7 @@
 var Sequelize = require('sequelize');
 var Place = require(__dirname + '/placeModel.js');
 var User = require(__dirname + '/../users/userModel.js');
-var GOOGLE_PLACES_API_KEY = require(__dirname + '/../config/googleplaces.js');
+var GOOGLE_PLACES_API_KEY = require(__dirname + '/../config/googleplaces.example.js');
 var request = require('request');
 var urlParser = require('url');
 
@@ -120,6 +120,7 @@ module.exports.searchGoogle = function(req, res) {
                 }).on('end', function() { //layer 4 on 'end'
                   body = JSON.parse(Buffer.concat(body).toString());
                   var placeDetails = body.result;
+                  console.log(placeDetails);
                   var reviews = placeDetails.reviews;
                   if (reviews) {
                     for (var j = 0; j < reviews.length; j++) {
@@ -135,7 +136,7 @@ module.exports.searchGoogle = function(req, res) {
                     }
                   }
                   counter++;
-                  if (counter === places.length) {
+                  if (counter === 5) {
                     res.json(filteredBody);
                   }
                 }); //end of layer 4 on 'end'
