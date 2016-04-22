@@ -117,10 +117,13 @@ module.exports.searchGoogle = function(req, res) {
                 var body = [];
                 response.on('data', function(chunk) { //layer 4 on 'data'
                   body.push(chunk);
+                  console.log(body); // delete me
+
                 }).on('end', function() { //layer 4 on 'end'
                   body = JSON.parse(Buffer.concat(body).toString());
                   var placeDetails = body.result;
-                  console.log(placeDetails);
+                  console.log(placeDetails); // delete me
+                  
                   var reviews = placeDetails.reviews;
                   if (reviews) {
                     for (var j = 0; j < reviews.length; j++) {
@@ -136,7 +139,7 @@ module.exports.searchGoogle = function(req, res) {
                     }
                   }
                   counter++;
-                  if (counter === 5) {
+                  if (counter === 5) { // change the value back to body.length when production
                     res.json(filteredBody);
                   }
                 }); //end of layer 4 on 'end'

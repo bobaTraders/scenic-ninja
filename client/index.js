@@ -9,6 +9,7 @@ import { createStore } from 'redux';
 import rootReducer from './reducers';
 
 import App from './components/App.js';
+import {GoogleMapLoader, GoogleMap, Marker} from "react-google-maps";
 
 // Grab the state from a global injected into server-generated HTML
 const initialState = window.__INITIAL_STATE__;

@@ -5,7 +5,7 @@ class PlaceEntry extends Component {
   constructor(props) {
     super(props);
     this.handleClick.bind(this);
-    this.tempClick.bind(this);
+    // this.tempClick.bind(this);
   }
 
   handleClick(e) {
@@ -13,15 +13,15 @@ class PlaceEntry extends Component {
     this.props.onSaveClick(this.props.place, this.props.user);
   }
 
-  tempClick(e) {
-    e.preventDefault;
-    console.log('im @ tempClick');
-    // this.props.tempClickHandler(this.)
-  }
+  // tempClick(e) {
+  //   e.preventDefault;
+  //   console.log('im @ tempClick');
+  //   // this.props.tempClickHandler(this.)
+  // }
 
   render() {
     return (
-      <div tempClick={this.tempClick.bind(this)} className='place-entry animated fadeInUp'>
+      <div /*tempClick={this.tempClick.bind(this)}*/ className='place-entry animated fadeInUp'>
         <div className='place-info' >
             <h4>{ this.props.place.name }</h4>
             <p>{ this.props.place.address }</p>
